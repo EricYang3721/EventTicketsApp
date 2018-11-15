@@ -13,6 +13,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import us.team7pro.EventTicketsApp.Repositories.*;
+import java.text.ParseException;
+import javax.swing.JOptionPane;
 @Controller
 public class OrganizerController {
     // @Autowired
@@ -29,7 +31,14 @@ public class OrganizerController {
     @PostMapping("/organizer")
     public String eventSubmit(@ModelAttribute Event newEvent, @RequestParam String eventDate) {
         DateFormat df = new SimpleDateFormat("MM-dd-yyyy-HH:mm");
-        Date d1 = df.parse(eventDate);
+        
+        String output = "";
+        try{
+            Date d1 = df.parse(eventDate);
+        } catch (ParseException e) {
+            output = "Can't parse " + eventDate;
+        }
+        JOptionPane.showMessageDialog(null, output);
 
         System.out.println(newEvent.getEventCategory());
         eventRepository.save(newEvent);
