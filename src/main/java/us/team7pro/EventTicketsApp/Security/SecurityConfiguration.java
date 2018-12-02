@@ -24,7 +24,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/cart").hasRole("USER")
             .and()
-            .formLogin();
+            .formLogin()
+            .and()
+            .logout();
     }
 
     @Override

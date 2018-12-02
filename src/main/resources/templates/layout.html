@@ -70,7 +70,9 @@
                                     <span> | </span>
                                     <a href="/signin" th:href="@{/signin}" aria-hidden="true">Sign In</a>
                                     <span> | </span>
-                                    <a href="/logout" th:href="@{/logout}" aria-hidden="true">Log out</a>
+                                    <a href="/logout" th:href="@{/logout}" aria-hidden="true">
+                                        <form method="POST" th:action="@{/logout}">Log out</form>
+                                    </a>
                                 </div>
                             </div>
                             <!-- Nav End -->
