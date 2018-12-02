@@ -1,5 +1,4 @@
-package us.team7pro.EventTicketsApp;
-
+package us.team7pro.EventTicketsApp.DatabaseLoaders;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -8,9 +7,6 @@ import us.team7pro.EventTicketsApp.Models.User;
 import us.team7pro.EventTicketsApp.Repositories.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
 
 @Component
 public class UserSeeder implements CommandLineRunner {
@@ -38,5 +34,5 @@ public class UserSeeder implements CommandLineRunner {
 
     }
 
-    
+
 }

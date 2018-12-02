@@ -1,4 +1,4 @@
-package us.team7pro.EventTicketsApp;
+package us.team7pro.EventTicketsApp.DatabaseLoaders;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
