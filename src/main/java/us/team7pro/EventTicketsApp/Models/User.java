@@ -1,13 +1,10 @@
 package us.team7pro.EventTicketsApp.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 
 @Entity
 @SequenceGenerator(name="debug", initialValue=0)
+@Table(name = "hardUser")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="debug") // To ensure general user has 0 as userID.
