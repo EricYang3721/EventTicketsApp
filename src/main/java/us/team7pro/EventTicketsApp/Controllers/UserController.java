@@ -34,7 +34,7 @@ public class UserController {
 //
    @GetMapping("/userdashboard")
    public String userdashboard(Model model, @AuthenticationPrincipal User user) {
-       List<Event> events = new ArrayList<Event>();;
+       List<Event> events = new ArrayList<Event>();
        List<Transaction> userTransactions = transactionRepository.findByUserID(user.getId());
        for (Transaction transaction : userTransactions) {
            events.add(eventRepository.findByEventID(transaction.getEventID()));

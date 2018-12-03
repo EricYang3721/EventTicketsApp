@@ -50,120 +50,33 @@
                         <div class="upcoming-shows-content">
     
                             <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div th:each="event : ${unapprovedEvents}" class="single-upcoming-shows d-flex align-items-center flex-wrap">
                                 <div class="shows-date">
-                                    <h2>17 <span>July</span></h2>
+                                    <h2><div th:class="'etms-event-date' + ${event.eventID}"></div> <span><div th:class="'etms-event-month' + ${event.eventID}"></div></span></h2>
                                 </div>
                                 <div class="shows-desc d-flex align-items-center">
                                     <div class="shows-img">
-                                        <img src="img/bg-img/s1.jpg" alt="">
+                                        <img th:src="${event.imgUrl}" alt="">
                                     </div>
                                     <div class="shows-name">
-                                        <h6>Electric castle Festival</h6>
-                                        <p>Cluj, Romania</p>
+                                        <h6 th:text="${event.eventName}"></h6>
+                                        <p></p>
                                     </div>
                                 </div>
                                 <div class="shows-location">
-                                    <p>At the Castle</p>
+                                    <p th:text="${event.location}" />
                                 </div>
                                 <div class="shows-time">
-                                    <p>20:30</p>
+                                    <p th:class="'etms-event-day' + ${event.eventID}"></p>
+                                    <p th:class="'etms-event-time' + ${event.eventID}"></p>
                                 </div>
                                 <div class="buy-tickets">
-                                    <a href="#" class="btn musica-btn">Details</a>
+                                    <a href="#" class="btn musica-btn">TODO: Details</a>
                                     <hr>
-                                    <a href="#" class="btn musica-btn">Approve</a>
+                                    <a href="#" class="btn musica-btn">TODO: Approve</a>
                                     <hr>
-                                    <a href="#" class="btn musica-btn">Reject</a>
-                                </div>
-                                
-                            </div>
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                <div class="shows-date">
-                                    <h2>23 <span>July</span></h2>
-                                </div>
-                                <div class="shows-desc d-flex align-items-center">
-                                    <div class="shows-img">
-                                        <img src="img/bg-img/s2.jpg" alt="">
-                                    </div>
-                                    <div class="shows-name">
-                                        <h6>Electric Festival</h6>
-                                        <p>Manhathan, NY, USA</p>
-                                    </div>
-                                </div>
-                                <div class="shows-location">
-                                    <p>Main Stadium</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>21:30</p>
-                                </div>
-                                <div class="buy-tickets">
-                                        <a href="#" class="btn musica-btn">Details</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Approve</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Reject</a>
-                                </div>
-                            </div>
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                <div class="shows-date">
-                                    <h2>25 <span>July</span></h2>
-                                </div>
-                                <div class="shows-desc d-flex align-items-center">
-                                    <div class="shows-img">
-                                        <img src="img/bg-img/s3.jpg" alt="">
-                                    </div>
-                                    <div class="shows-name">
-                                        <h6>Sunflower festival</h6>
-                                        <p>Paris, France</p>
-                                    </div>
-                                </div>
-                                <div class="shows-location">
-                                    <p>Sunflower Arena</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>20:30</p>
-                                </div>
-                                <div class="buy-tickets">
-                                        <a href="#" class="btn musica-btn">Details</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Approve</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Reject</a>
-                                </div>
-                            </div>
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                <div class="shows-date">
-                                    <h2>30 <span>July</span></h2>
-                                </div>
-                                <div class="shows-desc d-flex align-items-center">
-                                    <div class="shows-img">
-                                        <img src="img/bg-img/s4.jpg" alt="">
-                                    </div>
-                                    <div class="shows-name">
-                                        <h6>Electric castle Festival</h6>
-                                        <p>Cluj, Romania</p>
-                                    </div>
-                                </div>
-                                <div class="shows-location">
-                                    <p>At the Castle</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>20:30</p>
-                                </div>
-                                <div class="buy-tickets">
-                                        <a href="#" class="btn musica-btn">Details</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Approve</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Reject</a>
-                                </div>
+                                    <a href="#" class="btn musica-btn">TODO: Reject</a>
+                                </div>   
                             </div>
     
                         </div>
@@ -192,112 +105,31 @@
                         <div class="upcoming-shows-content">
     
                             <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div th:each="event : ${approvedEvents}" class="single-upcoming-shows d-flex align-items-center flex-wrap">
                                 <div class="shows-date">
-                                    <h2>17 <span>July</span></h2>
+                                    <h2><div th:class="'etms-event-date' + ${event.eventID}"></div> <span><div th:class="'etms-event-month' + ${event.eventID}"></div></span></h2>
                                 </div>
                                 <div class="shows-desc d-flex align-items-center">
                                     <div class="shows-img">
-                                        <img src="img/bg-img/s1.jpg" alt="">
+                                        <img th:src="${event.imgUrl}" alt="">
                                     </div>
                                     <div class="shows-name">
-                                        <h6>Electric castle Festival</h6>
-                                        <p>Cluj, Romania</p>
+                                        <h6 th:text="${event.eventName}"></h6>
+                                        <p></p>
                                     </div>
                                 </div>
                                 <div class="shows-location">
-                                    <p>At the Castle</p>
+                                    <p th:text="${event.location}" />
                                 </div>
                                 <div class="shows-time">
-                                    <p>20:30</p>
+                                    <p th:class="'etms-event-day' + ${event.eventID}"></p>
+                                    <p th:class="'etms-event-time' + ${event.eventID}"></p>
                                 </div>
                                 <div class="buy-tickets">
-                                    <a href="#" class="btn musica-btn">Cancel & Send e-mail</a>
+                                    <a href="#" class="btn musica-btn">TODO: Cancel & Send e-mail</a>
                                     <hr>
-                                    <a href="#" class="btn musica-btn">Refund customers</a>
-                                </div>
-                                
-                            </div>
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                <div class="shows-date">
-                                    <h2>23 <span>July</span></h2>
-                                </div>
-                                <div class="shows-desc d-flex align-items-center">
-                                    <div class="shows-img">
-                                        <img src="img/bg-img/s2.jpg" alt="">
-                                    </div>
-                                    <div class="shows-name">
-                                        <h6>Electric Festival</h6>
-                                        <p>Manhathan, NY, USA</p>
-                                    </div>
-                                </div>
-                                <div class="shows-location">
-                                    <p>Main Stadium</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>21:30</p>
-                                </div>
-                                <div class="buy-tickets">
-                                        <a href="#" class="btn musica-btn">Cancel & Send e-mail</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Refund customers</a>
-                                </div>
-                            </div>
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                <div class="shows-date">
-                                    <h2>25 <span>July</span></h2>
-                                </div>
-                                <div class="shows-desc d-flex align-items-center">
-                                    <div class="shows-img">
-                                        <img src="img/bg-img/s3.jpg" alt="">
-                                    </div>
-                                    <div class="shows-name">
-                                        <h6>Sunflower festival</h6>
-                                        <p>Paris, France</p>
-                                    </div>
-                                </div>
-                                <div class="shows-location">
-                                    <p>Sunflower Arena</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>20:30</p>
-                                </div>
-                                <div class="buy-tickets">
-                                        <a href="#" class="btn musica-btn">Cancel & Send e-mail</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Refund customers</a>
-                                </div>
-                            </div>
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                <div class="shows-date">
-                                    <h2>30 <span>July</span></h2>
-                                </div>
-                                <div class="shows-desc d-flex align-items-center">
-                                    <div class="shows-img">
-                                        <img src="img/bg-img/s4.jpg" alt="">
-                                    </div>
-                                    <div class="shows-name">
-                                        <h6>Electric castle Festival</h6>
-                                        <p>Cluj, Romania</p>
-                                    </div>
-                                </div>
-                                <div class="shows-location">
-                                    <p>At the Castle</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>20:30</p>
-                                </div>
-                                <div class="buy-tickets">
-                                        <a href="#" class="btn musica-btn">Cancel & Send e-mail</a>
-                                        <hr>
-                                        <a href="#" class="btn musica-btn">Refund customers</a>
-                                </div>
+                                    <a href="#" class="btn musica-btn">TODO: Refund customers</a>
+                                </div>   
                             </div>
     
                         </div>
@@ -322,5 +154,8 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <!-- Custom JS for Thymeleaf -->
+    <script th:replace="fragments :: single-event-js"></script>
 </body>
 </html>

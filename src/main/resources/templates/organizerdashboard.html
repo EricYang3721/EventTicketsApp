@@ -69,7 +69,7 @@
                                 <div class="buy-tickets">
                                     <a href="#" class="btn musica-btn">TODO: Edit</a>
                                     <hr>
-                                    <a href="#" class="btn musica-btn">TODO: Delete</a>                                    
+                                    <a href="#" class="btn musica-btn">TODO: Delete</a>
                                 </div>   
                             </div>
     
@@ -135,7 +135,7 @@
                     <div class="contact-content mt-70 mb-100">
                         <!-- Contact Form Area -->
                         <div class="contact-form-area">
-                            <form action="#" method="post" th:action="@{/organizer}" th:object="${newEvent}">
+                            <form action="#" method="post" th:action="@{/submitNewEvent}" th:object="${newEvent}">
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="name" placeholder="Event Name" th:field="*{eventName}">
                                 </div>

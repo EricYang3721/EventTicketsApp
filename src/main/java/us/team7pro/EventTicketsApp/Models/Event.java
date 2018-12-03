@@ -20,18 +20,17 @@ public class Event {
     private long organizerID;
     private String eventName;
     private String eventCategory; // Concerts, Sports, Festivals
-
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date date;
-    
     private String location;
     private String description;
     private float price;
     private String imgUrl;
+    private boolean status;  // approved or not
 
     public Event() {}
 
-    public Event(long organizerID, String eventName, String eventCategory, String location, Date date, String description, float price, String imgUrl) {
+    public Event(long organizerID, String eventName, String eventCategory, String location, Date date, String description, float price, String imgUrl, boolean status) {
         this.organizerID = organizerID;
         this.eventName = eventName;
         this.eventCategory = eventCategory;
@@ -40,5 +39,6 @@ public class Event {
         this.description = description;
         this.price = price;
         this.imgUrl = imgUrl;
+        this.status = status;
     }
 }

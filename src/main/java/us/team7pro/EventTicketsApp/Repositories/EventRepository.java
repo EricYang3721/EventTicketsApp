@@ -7,5 +7,6 @@ import java.util.List;
 public interface EventRepository extends JpaRepository<Event, Integer> {
     public List<String> findByEventCategory(String eventCategory);
     public List<String> findByOrganizerID(Long organizerID);
+    public List<String> findByStatus(boolean status);
     public Event findByEventID(int eventID);
 }

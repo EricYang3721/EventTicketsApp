@@ -22,12 +22,13 @@ public class OrganizerController {
         return "organizerdashboard";
     }
 
-    @PostMapping("/organizer")
+    @PostMapping("/submitNewEvent")
     public String eventSubmit(@ModelAttribute Event newEvent, Model model, @AuthenticationPrincipal User user) {
         System.out.println(newEvent.getEventCategory());
         newEvent.setOrganizerID(user.getId());
+        newEvent.setStatus(false);
         eventRepository.save(newEvent);
         model.addAttribute("newEvent", newEvent);
-        return "EventSubmitResult";
+        return "redirect:/./organizerdashboard";
     }
 }

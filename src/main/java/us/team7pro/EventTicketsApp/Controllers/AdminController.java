@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import us.team7pro.EventTicketsApp.Models.Event;
+import us.team7pro.EventTicketsApp.Repositories.EventRepository;
 import us.team7pro.EventTicketsApp.Services.EventService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -14,15 +15,18 @@ import java.io.IOException;
 public class AdminController {
     @Autowired
     private EventService eventService;
+    @Autowired
+    private EventRepository eventRepository;
 
     @GetMapping("/admin")
     public String test(Model model) {
-        List<Event> testList = eventService.findAll();
+        // List<Event> testList = eventService.findAll();
         // for(Event t : testList){
         //     System.out.println(t.getEventID());
         // }
-        model.addAttribute("testlist", testList);
-
+        model.addAttribute("unapprovedEvents", eventRepository.findByStatus(false));
+        model.addAttribute("approvedEvents", eventRepository.findByStatus(true));
+        model.addAttribute("events", eventRepository.findAll());
         return "admindashboard";
     }
 

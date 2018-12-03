@@ -17,7 +17,7 @@ public class Transaction {
     private String userName;
     private int eventID;
     private String eventName;
-    private boolean status;  // approved or not
+    private boolean status;  // purchased or not
 
     public Transaction() {}
 
