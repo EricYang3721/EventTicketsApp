@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import us.team7pro.EventTicketsApp.Models.Event;
 import us.team7pro.EventTicketsApp.Models.Transaction;
-import us.team7pro.EventTicketsApp.Models.User;
+import us.team7pro.EventTicketsApp.Domain.User;
 import us.team7pro.EventTicketsApp.Repositories.TransactionRepository;
 
 import java.util.List;
@@ -23,19 +23,19 @@ public class TransactionServiceJpaImpl implements TransactionService{
     private UserService userService;
 
     @Override
-    public List<Transaction> findByUserID(int userID) {
+    public List<Transaction> findByUserID(long userID) {
         return transRepo.findAll().stream()
                 .filter(t -> Objects.equals(t.getUserID(), userID))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<Transaction> findByUserIDAndStatus(int userID, boolean status) {
+    public List<Transaction> findByUserIDAndStatus(long userID, boolean status) {
         return transRepo.findByUserIDAndStatus(userID, status);
     }
 
     @Override
-    public Transaction findByUserIDAndEventID(int userID, int eventID) {
+    public Transaction findByUserIDAndEventID(long userID, int eventID) {
         return null;
     }
 
@@ -50,10 +50,10 @@ public class TransactionServiceJpaImpl implements TransactionService{
     }
 
     @Override
-    public void addToCart(int userID, int eventID) {
+    public void addToCart(long userID, int eventID) {
         Event e = eventService.findByEventID(eventID);
-        User u = userService.findUserById(userID);
-        Transaction transaction = new Transaction(u.getUserID(), u.getUserName(), e.getEventID(), e.getEventName());
+        User u = userService.findById(userID);
+        Transaction transaction = new Transaction(u.getId(), u.getEmail(), e.getEventID(), e.getEventName());
         transRepo.save(transaction);
     }
 }

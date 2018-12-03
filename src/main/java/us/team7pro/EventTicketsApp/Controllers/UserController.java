@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import us.team7pro.EventTicketsApp.Models.Transaction;
-import us.team7pro.EventTicketsApp.Models.User;
+import us.team7pro.EventTicketsApp.Domain.User;
 import us.team7pro.EventTicketsApp.Repositories.EventRepository;
 import us.team7pro.EventTicketsApp.Repositories.TransactionRepository;
 import us.team7pro.EventTicketsApp.Repositories.UserRepository;
@@ -73,7 +73,7 @@ public class UserController {
     public String userSubmit(@ModelAttribute User newUser){
         User dbUser = userRepository.findByEmail(newUser.getEmail());
         if(dbUser == null){
-            newUser.setRole("User");
+            //newUser.setRole("User");
             userRepository.save(newUser);
             return "success/signupSuccess";
         } else {

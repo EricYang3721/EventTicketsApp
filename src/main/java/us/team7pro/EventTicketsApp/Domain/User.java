@@ -33,6 +33,9 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private boolean enabled;
 
+    // From Old Models.User
+    private int[] transactions;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",

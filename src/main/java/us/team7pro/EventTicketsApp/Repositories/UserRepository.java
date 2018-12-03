@@ -1,10 +1,9 @@
 package us.team7pro.EventTicketsApp.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import us.team7pro.EventTicketsApp.Models.User;
+import us.team7pro.EventTicketsApp.Domain.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-    public User findByUserID(int userID);
+    public User findById(long id);
     public User findByEmail(String email);
-    public User findByUserName(String userName);
 }

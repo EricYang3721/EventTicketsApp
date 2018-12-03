@@ -54,7 +54,6 @@
                         <div class="cta-btn">
                             <form th:action="@{/addToCart}" method="POST">
                                 <input type="hidden" name="eventID" th:value="${event.eventID}" />
-                                <input type="hidden" name="userID" th:value="0" />
                                 <!--TODO: Add input for number of tickets. -->
                                 <input type="hidden" name="numberOfTickets" th:value="1" /> 
                                 <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Add to cart</a>

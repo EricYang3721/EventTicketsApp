@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import us.team7pro.EventTicketsApp.Domain.User;
 import us.team7pro.EventTicketsApp.Models.*;
 import us.team7pro.EventTicketsApp.Repositories.*;
 

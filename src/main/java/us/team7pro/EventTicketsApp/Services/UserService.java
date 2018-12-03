@@ -1,7 +1,7 @@
 package us.team7pro.EventTicketsApp.Services;
 
-import us.team7pro.EventTicketsApp.Models.User;
+import us.team7pro.EventTicketsApp.Domain.User;
 
 public interface UserService {
-    User findUserById(int usrID);
+    User findById(long id);
 }
