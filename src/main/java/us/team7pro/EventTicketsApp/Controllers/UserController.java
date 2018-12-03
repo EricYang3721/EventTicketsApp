@@ -27,11 +27,6 @@ public class UserController {
     @Autowired
     TransactionRepository transactionRepository;
 //
-    @GetMapping("/organizerdashboard")
-    public String organizerdashboard() {
-        return "organizerdashboard";
-    }
-//
 //    @GetMapping("/admindashboard")
 //    public String admindashboard() {
 //        return "admindashboard";

@@ -1,49 +1,33 @@
 package us.team7pro.EventTicketsApp.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import us.team7pro.EventTicketsApp.Models.Event;
-import us.team7pro.EventTicketsApp.Services.EventService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.List;
-import us.team7pro.EventTicketsApp.Repositories.*;
-import java.text.ParseException;
-import javax.swing.JOptionPane;
+import us.team7pro.EventTicketsApp.Domain.User;
+import us.team7pro.EventTicketsApp.Models.Event;
+import us.team7pro.EventTicketsApp.Repositories.EventRepository;;
+
 @Controller
-public class OrganizerController {
-    // @Autowired
-    // private EventService eventService;
+public class OrganizerController { 
     @Autowired
     private EventRepository eventRepository;
 
-    @GetMapping("/organizer")
-    public String eventForm(Model model) {
+    @GetMapping("/organizerdashboard")
+    public String eventForm(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("events", eventRepository.findByOrganizerID(user.getId()));
         model.addAttribute("newEvent", new Event());
         return "organizerdashboard";
     }
 
     @PostMapping("/organizer")
-    public String eventSubmit(@ModelAttribute Event newEvent, @RequestParam String eventDate) {
-        DateFormat df = new SimpleDateFormat("MM-dd-yyyy-HH:mm");
-        
-        String output = "";
-        try{
-            Date d1 = df.parse(eventDate);
-        } catch (ParseException e) {
-            output = "Can't parse " + eventDate;
-        }
-        JOptionPane.showMessageDialog(null, output);
-
+    public String eventSubmit(@ModelAttribute Event newEvent, Model model, @AuthenticationPrincipal User user) {
         System.out.println(newEvent.getEventCategory());
+        newEvent.setOrganizerID(user.getId());
         eventRepository.save(newEvent);
-        return "eventSubmitResult";
+        model.addAttribute("newEvent", newEvent);
+        return "EventSubmitResult";
     }
-
-
 }
