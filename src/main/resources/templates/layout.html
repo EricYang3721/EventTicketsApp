@@ -69,7 +69,7 @@
                                     <a href="/signin" th:href="@{/signin}" aria-hidden="true" sec:authorize="!isAuthenticated()">Sign In</a>
                                     <a href="#" sec:authorize="hasRole('ROLE_ADMIN')">Logged in as Admin </a>
                                     <a href="#" sec:authorize="hasRole('ROLE_ORGANIZER')">Logged in as Organizer </a>
-                                    <a href="#" sec:authorize="hasRole('ROLE_USER')">Hello Ricky </a>
+                                    <a href="/userdashboard" sec:authorize="hasRole('ROLE_USER')">Hello Ricky </a>
                                     <span> | </span>
                                     <a href="/logout" th:href="@{/logout}" aria-hidden="true" sec:authorize="isAuthenticated()">
                                         <form method="POST" th:action="@{/logout}" >Log out</form>

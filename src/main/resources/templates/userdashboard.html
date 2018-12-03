@@ -73,7 +73,6 @@
                                 <div class="buy-tickets">
                                     <form th:action="@{/cancelTicket}" method="POST">
                                         <input type="hidden" name="eventID" th:value="${event.eventID}" />
-                                        <input type="hidden" name="userID" th:value="0" />
                                         <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Cancel Ticket</a>
                                     </form>
                                     <hr>

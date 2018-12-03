@@ -1,9 +1,15 @@
 package us.team7pro.EventTicketsApp.Controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import us.team7pro.EventTicketsApp.Models.Event;
 import us.team7pro.EventTicketsApp.Models.Transaction;
 import us.team7pro.EventTicketsApp.Domain.User;
 import us.team7pro.EventTicketsApp.Repositories.EventRepository;
@@ -31,17 +37,17 @@ public class UserController {
 //        return "admindashboard";
 //    }
 //
-//    @GetMapping("/userdashboard")
-//    public String userdashboard(Model model) {
-//        List<Event> events = new ArrayList<Event>();;
-//        List<Transaction> userTransactions = transactionRepository.findByUserID(0);
-//        for (Transaction transaction : userTransactions) {
-//            events.add(eventRepository.findByEventID(transaction.getEventID()));
-//        }
-//        model.addAttribute("transactions", userTransactions);
-//        model.addAttribute("events", events);
-//        return "userdashboard";
-//    }
+   @GetMapping("/userdashboard")
+   public String userdashboard(Model model, @AuthenticationPrincipal User user) {
+       List<Event> events = new ArrayList<Event>();;
+       List<Transaction> userTransactions = transactionRepository.findByUserID(user.getId());
+       for (Transaction transaction : userTransactions) {
+           events.add(eventRepository.findByEventID(transaction.getEventID()));
+       }
+       model.addAttribute("transactions", userTransactions);
+       model.addAttribute("events", events);
+       return "userdashboard";
+   }
 
     // @RequestMapping("/purchaseTicket")
     // public String purchaseTicket(@RequestParam int eventID, @RequestParam int userID) {
@@ -55,8 +61,8 @@ public class UserController {
     // }
 
     @RequestMapping("/cancelTicket")
-    public String cancelTicket(@RequestParam int eventID, @RequestParam int userID) {
-        Transaction t = transactionRepository.findByUserIDAndEventID(userID, eventID);
+    public String cancelTicket(@RequestParam int eventID, @AuthenticationPrincipal User user) {
+        Transaction t = transactionRepository.findByUserIDAndEventID(user.getId(), eventID);
         if (t != null) {
             transactionRepository.delete(t);
         }
