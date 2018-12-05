@@ -11,4 +11,5 @@ public interface TransactionService {
     Transaction findByTransactionID(int transactionID);
     void delete(Transaction t);
     void addToCart(long userID, int eventID);
+    void deleteAll();
 }

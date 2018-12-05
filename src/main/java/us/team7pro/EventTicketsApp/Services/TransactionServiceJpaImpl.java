@@ -50,6 +50,11 @@ public class TransactionServiceJpaImpl implements TransactionService{
     }
 
     @Override
+    public void deleteAll() {
+        transRepo.deleteAll();
+    }
+
+    @Override
     public void addToCart(long userID, int eventID) {
         Event e = eventService.findByEventID(eventID);
         User u = userService.findById(userID);

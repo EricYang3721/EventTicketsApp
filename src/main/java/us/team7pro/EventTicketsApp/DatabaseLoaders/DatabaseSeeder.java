@@ -37,7 +37,7 @@ public class DatabaseSeeder implements CommandLineRunner {
         Date d6 = df.parse("23-12-2018-19:15");
 
 
-        event.add(new Event(0, "Kygo  Music" ,"Concert", "New York", d1 , "Kygo is a Electronic Dance Music DJ", 19.99f, "img/bg-img/kygo.jpg", true));
+        event.add(new Event(0, "Kygo Music" ,"Concert", "New York", d1 , "Kygo is a Electronic Dance Music DJ", 19.99f, "img/bg-img/kygo.jpg", true));
         event.add(new Event(0, "Ultra Music Festival" ,"Festival", "Miami", d3 , "Top 10 Dj's playing", 27.49f, "img/bg-img/bg-3.jpg", true));
         event.add(new Event(0, "Marshmello" ,"Concert", "Chicago", d2 , "Marshmello plays Techno", 13.99f, "img/dummy/Marshmello.jpg", true));
         event.add(new Event(0, "VH1 Supersonic" ,"Festival", "California", d4 , "Sponsered by Sreekar Dhaduvai", 15.99f, "img/bg-img/bg-5.jpg", false));

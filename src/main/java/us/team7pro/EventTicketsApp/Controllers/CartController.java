@@ -51,6 +51,7 @@ public class CartController {
 
     @GetMapping("/checkoutSuccess")
     public String checkOutSuccess(){
+        transactionService.deleteAll();
         return "success/checkoutSuccess";
     }
 }
