@@ -75,13 +75,13 @@
                                     <div class="buy-tickets">
                                         <form th:action="@{/buyTickets}" method="POST">
                                             <input type="hidden" name="eventID" th:value="${event.eventID}" />
-                                            <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">TODO: Event Details</a>
+                                            <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Event Details</a>
                                         </form>
                                     </div>
                                     <hr>
-                                    <a th:href="@{~/approveEvent(eventID=${event.eventID})}" class="btn musica-btn">TODO: Approve</a>
+                                    <a th:href="@{~/approveEvent(eventID=${event.eventID})}" class="btn musica-btn">Approve</a>
                                     <hr>
-                                    <a th:href="@{~/rejectEvent(eventID=${event.eventID})}" class="btn musica-btn">TODO: Reject</a>
+                                    <a th:href="@{~/rejectEvent(eventID=${event.eventID})}" class="btn musica-btn">Reject</a>
                                     <!-- <a href="#" class="btn musica-btn">TODO: Reject</a> -->
                                 </div>   
                             </div>
@@ -133,7 +133,7 @@
                                     <p th:class="'etms-event-time' + ${event.eventID}"></p>
                                 </div>
                                 <div class="buy-tickets">
-                                    <a th:href="@{~/rejectEvent(eventID=${event.eventID})}" class="btn musica-btn">TODO: Cancel Events</a>
+                                    <a th:href="@{~/rejectEvent(eventID=${event.eventID})}" class="btn musica-btn">Cancel Events</a>
                                     <hr>
                                     <!-- <a href="#" class="btn musica-btn">TODO: Refund customers</a> -->
                                 </div>   
