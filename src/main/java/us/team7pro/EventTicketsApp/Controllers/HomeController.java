@@ -36,9 +36,11 @@ public class HomeController {
         if(event_name.equals("")&& event_location.equals("")){
             return "homepage";
         } else if(event_name.equals("")){
-            model.addAttribute("events", eventRepository.findByLocation(event_location));
+            model.addAttribute("events", eventRepository.findByLocationContaining(event_location));
+        } else if(event_location.equals("")){
+            model.addAttribute("events", eventRepository.findByEventNameContaining(event_name));
         } else {
-            model.addAttribute("events", eventRepository.findByEventNameContainingOrLocation(event_name, event_location));
+            model.addAttribute("events", eventRepository.findByEventNameContainingOrLocationContaining(event_name, event_location));
         }       
         // System.out.println()
         return "searchResults";
