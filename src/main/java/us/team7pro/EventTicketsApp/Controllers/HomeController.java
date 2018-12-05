@@ -37,11 +37,9 @@ public class HomeController {
             return "homepage";
         } else if(event_name.equals("")){
             model.addAttribute("events", eventRepository.findByLocation(event_location));
-        } else if(event_location.equals("")){
-            model.addAttribute("events", eventRepository.findByEventName(event_name));
         } else {
-            model.addAttribute("events", eventRepository.findByEventNameAndLocation(event_name, event_location));
-        }        
+            model.addAttribute("events", eventRepository.findByEventNameContainingOrLocation(event_name, event_location));
+        }       
         // System.out.println()
         return "searchResults";
      }
