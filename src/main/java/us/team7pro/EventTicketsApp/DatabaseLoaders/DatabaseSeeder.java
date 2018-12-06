@@ -34,7 +34,7 @@ public class DatabaseSeeder implements CommandLineRunner {
         Date d2 = df.parse("12-09-2018-13:30");
         Date d3 = df.parse("12-09-2018-15:30");
         Date d4 = df.parse("12-09-2018-18:45");
-        Date d5 = df.parse("12-09-2019-21:00");
+        Date d5 = df.parse("12-09-2018-21:00");
         Date d6 = df.parse("12-09-2018-22:15");
         Date d7 = df.parse("12-10-2018-14:00");
         Date d8 = df.parse("12-10-2018-15:00");
