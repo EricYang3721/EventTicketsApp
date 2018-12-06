@@ -50,29 +50,29 @@
                         <div class="upcoming-shows-content">
     
                             <!-- Single Upcoming Shows -->
-                            <div th:each="event : ${events}" class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div th:each="transaction : ${transactions}" class="single-upcoming-shows d-flex align-items-center flex-wrap">
                                 <div class="shows-date">
-                                    <h2><div th:class="'etms-event-date' + ${event.eventID}"></div> <span><div th:class="'etms-event-month' + ${event.eventID}"></div></span></h2>
+                                    <h2><div th:class="'etms-event-date' + ${transaction.eventID}"></div> <span><div th:class="'etms-event-month' + ${transaction.eventID}"></div></span></h2>
                                 </div>
                                 <div class="shows-desc d-flex align-items-center">
                                     <div class="shows-img">
-                                        <img th:src="${event.imgUrl}" alt="">
+                                        <img th:class="'etms-event-image' + ${transaction.eventID}" alt="">
                                     </div>
                                     <div class="shows-name">
-                                        <h6 th:text="${event.eventName}"></h6>
+                                        <h6 th:class="'etms-event-name' + ${transaction.eventID}"></h6>
                                         <p></p>
                                     </div>
                                 </div>
                                 <div class="shows-location">
-                                    <p th:text="${event.location}" />
+                                    <p th:class="'etms-event-location' + ${transaction.eventID}" />
                                 </div>
                                 <div class="shows-time">
-                                    <p th:class="'etms-event-day' + ${event.eventID}"></p>
-                                    <p th:class="'etms-event-time' + ${event.eventID}"></p>
+                                    <p th:class="'etms-event-day' + ${transaction.eventID}"></p>
+                                    <p th:class="'etms-event-time' + ${transaction.eventID}"></p>
                                 </div>
                                 <div class="buy-tickets">
                                     <form th:action="@{/cancelTicket}" method="POST">
-                                        <input type="hidden" name="eventID" th:value="${event.eventID}" />
+                                        <input type="hidden" name="transactionID" th:value="${transaction.transactionID}" />
                                         <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Cancel Ticket</a>
                                     </form>
                                     <hr>

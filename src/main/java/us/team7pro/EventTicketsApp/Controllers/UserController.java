@@ -34,13 +34,8 @@ public class UserController {
 //
    @GetMapping("/userdashboard")
    public String userdashboard(Model model, @AuthenticationPrincipal User user) {
-       List<Event> events = new ArrayList<Event>();
-       List<Transaction> userTransactions = transactionRepository.findByUserID(user.getId());
-       for (Transaction transaction : userTransactions) {
-           events.add(eventRepository.findByEventID(transaction.getEventID()));
-       }
-       model.addAttribute("transactions", userTransactions);
-       model.addAttribute("events", events);
+       model.addAttribute("transactions", transactionRepository.findByUserID(user.getId()));
+       model.addAttribute("events", eventRepository.findAll());
        return "userdashboard";
    }
 
@@ -56,8 +51,8 @@ public class UserController {
     // }
 
     @RequestMapping("/cancelTicket")
-    public String cancelTicket(@RequestParam int eventID, @AuthenticationPrincipal User user) {
-        Transaction t = transactionRepository.findByUserIDAndEventID(user.getId(), eventID);
+    public String cancelTicket(@RequestParam int transactionID, @AuthenticationPrincipal User user) {
+        Transaction t = transactionRepository.findByTransactionID(transactionID);
         if (t != null) {
             transactionRepository.delete(t);
         }
