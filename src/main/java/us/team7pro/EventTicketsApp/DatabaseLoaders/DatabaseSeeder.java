@@ -30,6 +30,7 @@ public class DatabaseSeeder implements CommandLineRunner {
         List<Event> event =  new ArrayList<>();
         DateFormat df = new SimpleDateFormat("MM-dd-yyyy-HH:mm");
 
+        Date d0 = df.parse("12-09-2018-10:00");
         Date d1 = df.parse("12-09-2018-11:00");
         Date d2 = df.parse("12-09-2018-13:30");
         Date d3 = df.parse("12-09-2018-15:30");
@@ -137,13 +138,13 @@ public class DatabaseSeeder implements CommandLineRunner {
         Date d105= df.parse("12-07-2019-20:00");
 
 
-        event.add(new Event(0, "Kygo Music" ,"Concert", "New York", d1 , "Kygo is a Electronic Dance Music DJ", 19.99f, "img/bg-img/kygo.jpg", true));
-        event.add(new Event(0, "Ultra Music Festival" ,"Festival", "Miami", d3 , "Top 10 Dj's playing", 27.49f, "img/bg-img/bg-3.jpg", true));
+        event.add(new Event(0, "Kygo Music" ,"Concert", "New York", d0 , "Kygo is a Electronic Dance Music DJ", 19.99f, "img/bg-img/kygo.jpg", true));
+        event.add(new Event(0, "Ultra Music Festival" ,"Festival", "Miami", d1 , "Top 10 Dj's playing", 27.49f, "img/bg-img/bg-3.jpg", true));
         event.add(new Event(0, "Marshmello" ,"Concert", "Chicago", d2 , "Marshmello plays Techno", 13.99f, "img/dummy/Marshmello.jpg", true));
-        event.add(new Event(0, "VH1 Supersonic" ,"Festival", "California", d4 , "Sponsered by Sreekar Dhaduvai", 15.99f, "img/bg-img/bg-5.jpg", false));
-        event.add(new Event(0, "Donald Duck vs Daffy Duck" ,"Sport", "London", d1 , "The boxing match of the century.", 89.99f, "img/dummy/DonaldDuckVsDaffyDuck.jpg", true));
+        event.add(new Event(0, "VH1 Supersonic" ,"Festival", "California", d3 , "Sponsered by Sreekar Dhaduvai", 15.99f, "img/bg-img/bg-5.jpg", false));
+        event.add(new Event(0, "Donald Duck vs Daffy Duck" ,"Sport", "London", d4 , "The boxing match of the century.", 89.99f, "img/dummy/DonaldDuckVsDaffyDuck.jpg", true));
         event.add(new Event(0, "The tragedy of Elmer Fudd" ,"Theater", "California", d5 , "No sadder tale than this.", 10.00f, "img/dummy/Elmer.jpg", true));
-        event.add(new Event(0, "I can't believe this is a party" ,"Party", "Florida", d4 , "Crabs having a blast on the beach.", 54.49f, "img/dummy/CrabRave2.jpg", true));
+        event.add(new Event(0, "I can't believe this is a party" ,"Party", "Florida", d6 , "Crabs having a blast on the beach.", 54.49f, "img/dummy/CrabRave2.jpg", true));
         event.add(new Event(0, "Fresh Doge Memes" ,"Gallery", "New York", d6 , "A social commentary through memes.", 39.99f, "img/dummy/DogeArtGallery.jpg", false));
         event.add(new Event(0, "Film: RAIDERS OF THE LOST ARK w/Pre-Show Party" ,"Concert", "MainStage at Proctors", d7 , "RAIDERS OF THE LOST ARK!", 19.99f, "https://tickets.proctors.org/TheatreManager/95/image?event=11712", true));
         event.add(new Event(0, "The First Night of Funny New Year’s Event" ,"Festival", "MainStage at Proctors", d8 , "This New Year’s Eve say GOODBYE to 2018", 29.99f, "https://tickets.proctors.org/TheatreManager/95/image?event=11332", true));
