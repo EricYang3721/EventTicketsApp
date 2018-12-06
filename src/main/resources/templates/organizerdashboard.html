@@ -67,7 +67,10 @@
                                     <p th:class="'etms-event-time' + ${event.eventID}"></p>
                                 </div>
                                 <div class="buy-tickets">
-                                    <!-- <a href="#" class="btn musica-btn">TODO: Edit</a> -->
+                                    <form th:action="@{/buyTickets}" method="POST">
+                                        <input type="hidden" name="eventID" th:value="${event.eventID}" />
+                                        <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Event Details</a>
+                                    </form>
                                     <hr>
                                     <!-- <a href="" class="btn musica-btn">TODO: Delete</a> -->
                                     <a th:href="@{~/deleteEvent(eventID=${event.eventID})}" class="btn musica-btn">Delete</a>

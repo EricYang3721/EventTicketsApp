@@ -71,7 +71,7 @@
                                     <p>Price per ticket</p>
                                 </div>
                                 <div class="buy-tickets">
-                                    <p>Total Amount</p>
+                                    <!-- <p>Total Amount</p> -->
                                 </div>
                                 
                             </div>
@@ -98,10 +98,16 @@
                                     <p th:class="'etms-event-price' + ${transaction.eventID}">$50/ticket</p>
                                 </div>
                                 <div class="buy-tickets"><!--Total Ammount-->
-                                    <p th:class="'etms-event-price' + ${transaction.eventID}">$50</p>
+                                    <!-- <p th:class="'etms-event-price' + ${transaction.eventID}">$50</p>
+                                    <hr> -->
                                     <form th:action="@{/removeFromCart}" method="POST">
                                         <input type="hidden" name="transactionID" th:value="${transaction.transactionID}" />
                                         <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Remove</a>
+                                    </form>
+                                    <hr>
+                                    <form th:action="@{/buyTickets}" method="POST">
+                                        <input type="hidden" name="eventID" th:value="${transaction.eventID}" />
+                                        <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Event Details</a>
                                     </form>
                                 </div>   
                             </div>

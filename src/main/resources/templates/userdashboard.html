@@ -76,7 +76,10 @@
                                         <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Cancel Ticket</a>
                                     </form>
                                     <hr>
-                                    <a href="#" class="btn musica-btn">Re-sell Ticket</a>                                    
+                                    <form th:action="@{/buyTickets}" method="POST">
+                                        <input type="hidden" name="eventID" th:value="${transaction.eventID}" />
+                                        <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Event Details</a>
+                                    </form>
                                 </div>   
                             </div>
     
