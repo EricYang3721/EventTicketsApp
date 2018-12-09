@@ -25,3 +25,14 @@ userRepo.save(customer);
 
 
 
+#### Screenshots
+
+##### Homepage
+
+![homepage](https://github.com/csi518-team7/EventTicketsApp/blob/master/screenshots/homepage.png)
+
+
+
+##### Ticket detail page
+
+![detailpage](https://github.com/csi518-team7/EventTicketsApp/blob/master/screenshots/detailpage.png)
