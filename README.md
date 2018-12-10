@@ -36,3 +36,24 @@ userRepo.save(customer);
 ##### Ticket detail page
 
 ![detailpage](https://github.com/csi518-team7/EventTicketsApp/blob/master/screenshots/detailpage.png)
+
+
+
+#### Project prototype
+
+![homepage](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/Homepage.png)
+
+![eventdetailpage](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/Event%20Detail%20Page.png)
+
+![searchresult](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/Search%20result.png)
+
+![ticketprint](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/Ticket%20detail.png)
+
+![upcoming](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/Upcoming%20event.png)
+
+![userdash](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/User%20Dashboard.png)
+
+![login](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/login%20page.png)
+
+![signup](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/signup%20page.png)
+
