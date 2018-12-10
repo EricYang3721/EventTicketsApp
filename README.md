@@ -41,6 +41,8 @@ userRepo.save(customer);
 
 #### Project prototype
 
+[Prototype file](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/Ticketing.xd)
+
 ![homepage](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/Homepage.png)
 
 ![eventdetailpage](https://github.com/csi518-team7/EventTicketsApp/blob/master/prototypes/Event%20Detail%20Page.png)
